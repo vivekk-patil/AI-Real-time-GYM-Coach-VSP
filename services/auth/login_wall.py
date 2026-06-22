@@ -6,7 +6,7 @@ def render_login_wall():
     if st.session_state.get("user_id") is not None:
         return True
     
-    st.title("🏋️‍♂️ AI Real-time GYM Trainer")
+    st.title("🏋️‍♂️ AI Real-time GYM Trainer - VSP")
     st.markdown("### Welcome! Please enter a username to start.")
 
     with st.form("login_form", clear_on_submit=False):
@@ -24,5 +24,18 @@ def render_login_wall():
         st.session_state["username"] = user["username"]
 
         st.rerun()
+
+    st.markdown("""
+    <footer style="
+        text-align: center;
+        padding: 15px;
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        color: white;
+        font-size: 14px;
+    ">
+        © 2026 AI Real-time GYM Coach | Developed by Vivek Satish Patil
+    </footer>
+    """, unsafe_allow_html=True)
 
     return False
